@@ -42,16 +42,21 @@ frame_e_baixo.grid(row=1, column=0, sticky=NSEW)
 # ----CRIANDO BOTOES
 
 b_novo = Button(frame_e_cima, text="NOVO", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
-                relief='raised', overrelief='ridge', font=('Ivi 10 bold'), bg=cor1, fg=cor3)
-b_novo.place(x=00, y=20)
+                relief=RAISED,bg=cor3, fg="white", anchor="center", overrelief='ridge', font="5")#foi usado grid para criar botao ao vez de place
+b_novo.grid(row=0, column=0, sticky=NSEW, pady=1)
+
+
 
 b_remover = Button(frame_e_cima, text="REMOVER", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
-                   relief='raised', overrelief='ridge', font=('Ivi 10 bold'), bg=cor1, fg=cor3)
-b_remover.place(x=70, y=20)
+                   relief=RAISED,bg=cor4, fg="white", anchor="center", overrelief='ridge', font="5")#foi usado grid para criar botao ao vez de place
+b_remover.grid(row=0, column=1, sticky=NSEW, pady=1)
+
 
 b_atualizar = Button(frame_e_cima, text="ATUALIZAR", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
-                     relief='raised', overrelief='ridge', font=('Ivi 10 bold'), bg=cor1, fg=cor3)
-b_atualizar.place(x=120, y=20)
+                     relief=RAISED,bg=cor5, fg="white", anchor="center", overrelief='ridge', font="5")#foi usado grid para criar botao ao vez de place
+b_atualizar.grid(row=0, column=2, sticky=NSEW, pady=1)
+
+
 
 # ----LABEL TAREFAS
 
