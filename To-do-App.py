@@ -1,3 +1,4 @@
+from cProfile import label
 from tkinter import *
 from tkinter import ttk
 
@@ -17,7 +18,7 @@ janela = Tk()
 janela.resizable(width=False, height=False)
 janela.geometry("500x225")
 janela.title('To-Do')
-janela.configure(background=cor1)
+janela.configure(background=cor2)
 
 # ----CRIANDO FRAMES DENTRO DA JANELA
 frame_esquerda = Frame(janela, width=300, height=200,
@@ -26,16 +27,16 @@ frame_esquerda.grid(row=0, column=0, sticky=NSEW)
 # Sticky=NSEW, para preencher todo espaco, norte, sul, este oeste
 
 frame_direita = Frame(janela, width=200, height=250,
-                      pady=0, padx=300, relief=FLAT, bg=cor3)
+                      pady=0, padx=300, relief=FLAT, bg=cor2)
 frame_direita.grid(row=0, column=1, sticky=NSEW)
 
 # ----frame esquerda dividida em duas partes
 frame_e_cima = Frame(frame_esquerda, width=300, height=50,  # copiou de cima e mudou a janela, colocou o frame recem criada = frame_esquerda
-                     pady=0, padx=0, relief=FLAT, bg=cor5)
+                     pady=0, padx=0, relief=FLAT, bg=cor2)
 frame_e_cima.grid(row=0, column=0, sticky=NSEW)
 
 frame_e_baixo = Frame(frame_esquerda, width=300, height=150,
-                      pady=0, padx=0, relief=FLAT, bg=cor4)
+                      pady=0, padx=0, relief=FLAT, bg=cor2)
 frame_e_baixo.grid(row=1, column=0, sticky=NSEW)
 
 
@@ -58,9 +59,11 @@ b_atualizar.grid(row=0, column=2, sticky=NSEW, pady=1)
 
 # ----LABEL TAREFAS
 
-l_tarefas = Label(frame_direita, text="TAREFAS", width=25, height=0, padx=0,
-                  relief='flat', anchor='center', font=('Ivi 15 bold'), bg=cor2, fg=cor2)
-l_tarefas.place(x=50, y=30)
+label = Label(frame_direita, text="Tarefas", width=37, height=1, pady=7,
+              padx=30, relief="flat", anchor=W, font=("Courier 20 bold"), fg=cor0, bg=cor2)
+label.grid(row=0, column=0, sticky=NSEW, pady=1)
+
+# ------Criando Caixa de listas
 
 
 janela.mainloop()
