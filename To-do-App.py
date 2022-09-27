@@ -42,27 +42,25 @@ frame_e_baixo.grid(row=1, column=0, sticky=NSEW)
 # ----CRIANDO BOTOES
 
 b_novo = Button(frame_e_cima, text="NOVO", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
-                relief=RAISED,bg=cor3, fg="white", anchor="center", overrelief='ridge', font="5")#foi usado grid para criar botao ao vez de place
+                relief=RAISED, bg=cor3, fg="white", anchor="center", overrelief='ridge', font=("Arial 10 bold"))  # foi usado grid para criar botao ao vez de place
 b_novo.grid(row=0, column=0, sticky=NSEW, pady=1)
 
 
-
 b_remover = Button(frame_e_cima, text="REMOVER", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
-                   relief=RAISED,bg=cor4, fg="white", anchor="center", overrelief='ridge', font="5")#foi usado grid para criar botao ao vez de place
+                   relief=RAISED, bg=cor4, fg="white", anchor="center", overrelief='ridge', font=('Arial 10 bold'))  # foi usado grid para criar botao ao vez de place
 b_remover.grid(row=0, column=1, sticky=NSEW, pady=1)
 
 
 b_atualizar = Button(frame_e_cima, text="ATUALIZAR", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
-                     relief=RAISED,bg=cor5, fg="white", anchor="center", overrelief='ridge', font="5")#foi usado grid para criar botao ao vez de place
+                     relief=RAISED, bg=cor5, fg="white", anchor="center", overrelief='ridge', font=("Arial 10 bold"))  # foi usado grid para criar botao ao vez de place
 b_atualizar.grid(row=0, column=2, sticky=NSEW, pady=1)
-
 
 
 # ----LABEL TAREFAS
 
 l_tarefas = Label(frame_direita, text="TAREFAS", width=25, height=0, padx=0,
-                  relief='flat', anchor='center', font=('Ivi 15 bold'), bg=cor2, fg=cor0)
-l_tarefas.place(x=50, y=50)
+                  relief='flat', anchor='center', font=('Ivi 15 bold'), bg=cor2, fg=cor2)
+l_tarefas.place(x=50, y=30)
 
 
 janela.mainloop()
