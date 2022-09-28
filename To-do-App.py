@@ -22,21 +22,21 @@ janela.configure(background=cor2)
 
 # ----CRIANDO FRAMES DENTRO DA JANELA
 frame_esquerda = Frame(janela, width=300, height=200,
-                       pady=0, padx=0, relief=FLAT, bg=cor2)
+                       bg=cor2, relief="flat")
 frame_esquerda.grid(row=0, column=0, sticky=NSEW)
 # Sticky=NSEW, para preencher todo espaco, norte, sul, este oeste
 
 frame_direita = Frame(janela, width=200, height=250,
-                      pady=0, padx=300, relief=FLAT, bg=cor2)
+                      bg=cor2, relief="flat")
 frame_direita.grid(row=0, column=1, sticky=NSEW)
 
 # ----frame esquerda dividida em duas partes
 frame_e_cima = Frame(frame_esquerda, width=300, height=50,  # copiou de cima e mudou a janela, colocou o frame recem criada = frame_esquerda
-                     pady=0, padx=0, relief=FLAT, bg=cor2)
+                     bg=cor2, relief="flat")
 frame_e_cima.grid(row=0, column=0, sticky=NSEW)
 
 frame_e_baixo = Frame(frame_esquerda, width=300, height=150,
-                      pady=0, padx=0, relief=FLAT, bg=cor2)
+                      bg=cor2, relief="flat")
 frame_e_baixo.grid(row=1, column=0, sticky=NSEW)
 
 
@@ -64,6 +64,17 @@ label = Label(frame_direita, text="Tarefas", width=37, height=1, pady=7,
 label.grid(row=0, column=0, sticky=NSEW, pady=1)
 
 # ------Criando Caixa de listas
+
+listbox = Listbox(frame_direita, font=("Courier 9 bold"), width=1)
+listbox.grid(row=1, column=0, sticky=NSEW, pady=5)
+
+
+# ----Adicionando tarefas na listbox
+
+tarefas = ["pagar contas", "assistir one piece",
+           "encontrar o mundial do palmeiras"]
+for item in tarefas:
+    listbox.insert(END, item)
 
 
 janela.mainloop()
