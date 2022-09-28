@@ -48,9 +48,12 @@ def main(a):
     if a == "novo":
         print("novo")
 
-    label = Label(frame_e_baixo, text="Insira nova tarefa", width=42, height=1, pady=7,
-                  padx=10, relief="flat", anchor=W, fg=cor0, bg=cor2)
-    label.grid(row=0, column=0, sticky=NSEW, pady=1)
+    label = Label(frame_e_baixo, text="Insira nova tarefa", width=42, height=5, pady=15,
+                  anchor=W, fg=cor0, bg=cor2)
+    label.grid(row=0, column=0, sticky=NSEW)
+    #ADD ENTRY (CAIXA DE TEXTO QUE IRA MANDAR PARA TAREFAS)
+    entry = Entry(frame_e_baixo, width=15)
+    entry.grid(row=1, column=0, sticky=NSEW)
 
     # ATUALIZAR
     if a == "atualizar":
