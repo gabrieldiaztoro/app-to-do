@@ -46,18 +46,42 @@ frame_e_baixo.grid(row=1, column=0, sticky=NSEW)
 def main(a):
     # NOVO
     if a == "novo":
-        print("novo")
 
-    label = Label(frame_e_baixo, text="Insira nova tarefa", width=42, height=5, pady=15,
-                  anchor=W, fg=cor0, bg=cor2)
-    label.grid(row=0, column=0, sticky=NSEW)
-    #ADD ENTRY (CAIXA DE TEXTO QUE IRA MANDAR PARA TAREFAS)
-    entry = Entry(frame_e_baixo, width=15)
-    entry.grid(row=1, column=0, sticky=NSEW)
+        def adicionar():
+            tarefa_entry = entry.get()
+            inserir([tarefa_entry])
+            mostrar()
 
-    # ATUALIZAR
+        lb = Label(frame_e_baixo, text="Insira nova tarefa", width=42, height=5, pady=15,
+                   anchor=CENTER)  # removeu esta parte e deixou o fundo da cor oriinal do  bg.  fg=cor0, bg=cor2)
+        lb.grid(row=0, column=0, sticky=NSEW)
+        # ADD ENTRY (CAIXA DE TEXTO QUE IRA MANDAR PARA TAREFAS)
+        entry = Entry(frame_e_baixo, width=15)
+        entry.grid(row=1, column=0, sticky=NSEW)
+
+        # ADICIONANDO BOTAO PARA (ADICIONAR TAREFA)
+        b_adicionar = Button(frame_e_baixo, text="ADICIONAR", width=10, pady=11, height=1,
+                             bg=cor6, fg=cor0, font="8", anchor="center", relief=RAISED, command=adicionar)
+        b_adicionar.grid(row=2, column=0, sticky=NSEW, pady=15)
+
+
+# ATUALIZAR
     if a == "atualizar":
-        print("atualizar")
+        tarefa_entry = entry.get()
+        inserir([tarefa_entry])
+        mostrar()
+
+        lb = Label(frame_e_baixo, text="Atualize a tarefa", width=42, height=5, pady=15,
+                   anchor=CENTER)  # removeu esta parte e deixou o fundo da cor oriinal do  bg.  fg=cor0, bg=cor2)
+        lb.grid(row=0, column=0, sticky=NSEW)
+        # ADD ENTRY (CAIXA DE TEXTO QUE IRA MANDAR PARA TAREFAS)
+        entry = Entry(frame_e_baixo, width=15)
+        entry.grid(row=1, column=0, sticky=NSEW)
+
+        # ADICIONANDO BOTAO PARA (ATUALIZAR TAREFA)
+        b_atualizar = Button(frame_e_baixo, text="ATUALIZAR", width=10, pady=11, height=1,
+                             bg=cor6, fg=cor0, font="8", anchor="center", relief=RAISED, command=adicionar)
+        b_atualizar.grid(row=2, column=0, sticky=NSEW, pady=15)
 
 
 # ----CRIANDO BOTOES
@@ -110,6 +134,7 @@ for item in tarefas:
 
 
 def mostrar():
+    listbox.delete(0, END)
     tarefas = selecionar()
     for item in tarefas:
         listbox.insert(END, item[1])
