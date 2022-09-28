@@ -85,21 +85,26 @@ def selecionar():
 print(selecionar())
 
 # (PASSO 11) CRIANDO FUNCAO PARA DELETAR
-
+"""
 with con:
     cur = con.cursor()
     cur.execute("DELETE FROM tarefa WHERE id=4")
-
-
+# Rodar novamente no comando (python dbd.py) remover um item, verificando a funcionalidade
 """
-def selecionar():
-    lista_tarefa=[]
+# (PASSO 12) CONTINUACAO CRIANDO FUNCAO PARA DELETAR
+
+
+def deletar(i):
+    lista_tarefa = []
     with con:
         cur = con.cursor()
-        cur.execute("DELETE FROM tarefa WHERE id=4")
-        row=cur.fetchall()
-        for r in row:
-            lista_tarefa.append(r)
-    return lista_tarefa
-print(selecionar())      
-"""
+        query = "DELETE FROM tarefa WHERE id=?"
+        cur.execute(query, i)
+
+# (PASSO 13) CRIANDO FUNCAO PARA ATUALIZAR
+# def deletar(i):
+#    lista_tarefa=[]
+with con:
+    cur = con.cursor()
+    cur.execute("UPDATE tarefa SET nome='Comer' WHERE id=3")
+# Rodar novamente no comando (python dbd.py) atualizar item 3
