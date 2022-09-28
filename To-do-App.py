@@ -1,6 +1,6 @@
-from cProfile import label
+from cProfile import label  # adicionou sozinho
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk  # adicionou sozinho
 from dbd import *
 
 # ------CORES
@@ -72,11 +72,19 @@ listbox.grid(row=1, column=0, sticky=NSEW, pady=5)
 
 # ----Adicionando tarefas na listbox
 
+"""
 tarefas = ["pagar contas", "assistir one piece",
            "encontrar o mundial do palmeiras"]
 for item in tarefas:
     listbox.insert(END, item)
-#PROXIMO PASSO, CRIAR BANCO DE DADOS, SEGUIR OS PASSOS NA ABA DBD
-#PROXIMO PASSO, APOS RETORNAR DA OUTRA JANELA, IMPORTAR O BANCO DE DADOS LA EM CIMA
+# PROXIMO PASSO, CRIAR BANCO DE DADOS, SEGUIR OS PASSOS NA ABA DBD
+"""
+# PROXIMO PASSO, APOS RETORNAR DA OUTRA JANELA, IMPORTAR O BANCO DE DADOS LA EM CIMA
+
+# configurando para mostrar somente os nomes, sem os numeros e ()
+tarefas = selecionar()
+for item in tarefas:
+    listbox.insert(END, item[1])
+
 
 janela.mainloop()
