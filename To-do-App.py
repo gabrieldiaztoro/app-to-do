@@ -14,7 +14,7 @@ cor5 = "#59b356"  # verde
 cor6 = "#cdd1cd"  # cizenta
 
 
-# ---------CRIANDO JANELA PRINCIPAL-----
+# ---------CRIANDO JANELA PRINCIPAL-----(PASSO 1)
 janela = Tk()
 janela.resizable(width=False, height=False)
 janela.geometry("500x225")
@@ -40,17 +40,25 @@ frame_e_baixo = Frame(frame_esquerda, width=300, height=150,
                       bg=cor2, relief="flat")
 frame_e_baixo.grid(row=1, column=0, sticky=NSEW)
 
+#(PASSO 2) criando função para os botoes NOVO E ATUALIZAR
+def main(a):
+    # NOVO
+    if a == "novo":
+        print("novo")
+    # ATUALIZAR
+    if a == "atualizar":
+        print("atualizar")
+
 
 # ----CRIANDO BOTOES
-
 b_novo = Button(frame_e_cima, text="NOVO", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
-                relief=RAISED, bg=cor3, fg="white", anchor="center", overrelief='ridge', font=("Arial 10 bold"))  # foi usado grid para criar botao ao vez de place
-b_novo.grid(row=0, column=0, sticky=NSEW, pady=1)
+                relief=RAISED, command=lambda:main("novo"), bg=cor3, fg="white", anchor="center", overrelief='ridge', font=("Arial 10 bold"))  # foi usado grid para criar botao ao vez de place
+b_novo.grid(row=0, column=0, sticky=NSEW, pady=1) #adicionado  command=lambda:main("novo"), depois do PASSO 2
 
 
 b_remover = Button(frame_e_cima, text="REMOVER", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
-                   relief=RAISED, bg=cor4, fg="white", anchor="center", overrelief='ridge', font=('Arial 10 bold'))  # foi usado grid para criar botao ao vez de place
-b_remover.grid(row=0, column=1, sticky=NSEW, pady=1)
+                   relief=RAISED, command=lambda:main("atualizar"), bg=cor4, fg="white", anchor="center", overrelief='ridge', font=('Arial 10 bold'))  # foi usado grid para criar botao ao vez de place
+b_remover.grid(row=0, column=1, sticky=NSEW, pady=1) #adicionado  command=lambda:main("atualizar"), depois do PASSO 2
 
 
 b_atualizar = Button(frame_e_cima, text="ATUALIZAR", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
@@ -82,9 +90,23 @@ for item in tarefas:
 # PROXIMO PASSO, APOS RETORNAR DA OUTRA JANELA, IMPORTAR O BANCO DE DADOS LA EM CIMA
 
 # configurando para mostrar somente os nomes, sem os numeros e ()
+"""
 tarefas = selecionar()
 for item in tarefas:
     listbox.insert(END, item[1])
+"""
+
+
+def mostrar():
+    tarefas = selecionar()
+    for item in tarefas:
+        listbox.insert(END, item[1])
+
+
+mostrar()
+
+# prox passo definir funcao dos botoes novo e atualizar, adicionado PASSO 2 LA EM CIMA
+# (CONTINUACAO DO PASSO 1)
 
 
 janela.mainloop()
