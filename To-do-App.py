@@ -1,6 +1,7 @@
 from cProfile import label
 from tkinter import *
 from tkinter import ttk
+from dbd import *
 
 # ------CORES
 
@@ -75,6 +76,7 @@ tarefas = ["pagar contas", "assistir one piece",
            "encontrar o mundial do palmeiras"]
 for item in tarefas:
     listbox.insert(END, item)
-
+#PROXIMO PASSO, CRIAR BANCO DE DADOS, SEGUIR OS PASSOS NA ABA DBD
+#PROXIMO PASSO, APOS RETORNAR DA OUTRA JANELA, IMPORTAR O BANCO DE DADOS LA EM CIMA
 
 janela.mainloop()

@@ -108,3 +108,13 @@ with con:
     cur = con.cursor()
     cur.execute("UPDATE tarefa SET nome='Comer' WHERE id=3")
 # Rodar novamente no comando (python dbd.py) atualizar item 3
+
+# (PASSO 14)CONTINUACAO CRIANDO FUNCAO PARA ATUALIZAR
+def atualizar(i):
+#   lista_tarefa=[]
+    with con:
+        query = "UPDATE tarefa SET nome='Comer' WHERE id=?"
+        cur.execute(query, i)
+
+# (PASSO 15)cnectar backend com frontend (outra aba)
+
