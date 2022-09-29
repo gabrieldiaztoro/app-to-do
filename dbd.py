@@ -115,8 +115,8 @@ def deletar(i):
 def atualizar(i):
     #   lista_tarefa=[]
     with con:
-        cur = con.cursor()
-        query = "UPDATE tarefa SET nome=? WHERE id=?"
+        cur=con.cursor()
+        query="UPDATE tarefa SET nome=? WHERE id=?"
         cur.execute(query, i)
 
 # (PASSO 15)cnectar backend com frontend (outra aba)
