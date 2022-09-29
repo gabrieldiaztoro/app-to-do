@@ -124,30 +124,20 @@ b_novo = Button(frame_e_cima, text="NOVO", width=10, height=1,  # frame_e_cima# 
 # adicionado  command=lambda:main("novo"), depois do PASSO 2
 b_novo.grid(row=0, column=0, sticky=NSEW, pady=1)
 
-
 b_remover = Button(frame_e_cima, text="REMOVER", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
                    relief=RAISED, command=remover, bg=cor4, fg="white", anchor="center", overrelief='ridge', font=('Arial 10 bold'))  # foi usado grid para criar botao ao vez de place
 b_remover.grid(row=0, column=1, sticky=NSEW, pady=1)
-
-
 b_atualizar = Button(frame_e_cima, text="ATUALIZAR", width=10, height=1,  # frame_e_cima# foi colocado ao vez da freme principal
                      relief=RAISED, command=lambda: main("atualizar"), bg=cor5, fg="white", anchor="center", overrelief='ridge', font=("Arial 10 bold"))  # foi usado grid para criar botao ao vez de place
 # adicionado  command=lambda:main("atualizar"), depois do PASSO 2
 b_atualizar.grid(row=0, column=2, sticky=NSEW, pady=1)
-
-
 # ----LABEL TAREFAS
-
 label = Label(frame_direita, text="Tarefas", width=37, height=1, pady=7,
               padx=30, relief="flat", anchor=W, font=("Courier 20 bold"), fg=cor0, bg=cor2)
 label.grid(row=0, column=0, sticky=NSEW, pady=1)
-
 # ------Criando Caixa de listas
-
 listbox = Listbox(frame_direita, font=("Courier 9 bold"), width=1)
 listbox.grid(row=1, column=0, sticky=NSEW, pady=5)
-
-
 # ----Adicionando tarefas na listbox
 
 """
